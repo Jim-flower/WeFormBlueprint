@@ -16,4 +16,8 @@ public class SpectatorController {
 
         return collection;
     }
+    @GetMapping("/randomGet")
+    public String randomGet(){
+        return "random";
+    }
 }
