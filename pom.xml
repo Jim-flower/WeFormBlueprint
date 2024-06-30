@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+<!--    这是当前最外层父项目的坐标-->
+    <groupId>org.tools</groupId>
+    <artifactId>WeFormBluePrint</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+<!--    这是这个最外层项目包含的子项目声明，这样的话编译最外层项目，就会按照依赖顺序一个一个编译-->
+    <modules>
+        <module>common</module>
+        <module>security</module>
+        <module>Wahrheit</module>
+    </modules>
+
+<!--    引入springboot-web项目的依赖 ，引入依赖前 先引入parent 标签-->
+<!--    这个parent标签就是指定父项目，就如当前项目最外层没有src路径的项目 就是内部common、seciruty和Wahrheit的父项目-->
+<!--    也就是说parent实际上是起到一个继承的作用，继承父项目的pom，而pom中预先定义好了一些依赖和配置，不需要我在此引入，就是它提供一些你可能用-->
+<!--    到的依赖和配置，考虑很周到-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.6.RELEASE</version>
+        <relativePath />
+    </parent>
+
+
+<!--    引入依赖 首先是springboot-web-starter-->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
+
+<!--    这个properties标签没有具体学习什么作用，里面声明了一些maven 编译器的一些属性 TODO-->
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+
+
+</project>
