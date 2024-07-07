@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 <!--    这是当前最外层父项目的坐标-->
-    <groupId>org.tools</groupId>
+    <groupId>org.weform.blueprint</groupId>
     <artifactId>WeFormBluePrint</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -33,6 +33,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
     </dependencies>
 
 <!--    这个properties标签没有具体学习什么作用，里面声明了一些maven 编译器的一些属性 TODO-->
